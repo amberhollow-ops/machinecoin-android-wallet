@@ -2,11 +2,11 @@
 
 ## Install on Android
 
-[Download the APK](https://github.com/amberhollow-ops/machinecoin-android-wallet/releases/download/v0.1.2-alpha/Machinecoin-Android-arm64-experimental.apk)
+[Download the APK](https://github.com/amberhollow-ops/machinecoin-android-wallet/releases/download/v0.2.0-alpha/Machinecoin-Android-arm64-experimental.apk)
 
 Scan this QR code with your phone camera to download the APK directly:
 
-![Download the Android wallet](https://github.com/amberhollow-ops/machinecoin-android-wallet/releases/download/v0.1.2-alpha/download-qr-screen-lock.png)
+![Download the Android wallet](https://github.com/amberhollow-ops/machinecoin-android-wallet/releases/download/v0.2.0-alpha/download-qr-midnight.png)
 
 Open the downloaded file and confirm the Android installation prompt. If prompted, allow installation from your browser. Android system prompts follow your device language; the wallet interface is English.
 
@@ -20,6 +20,9 @@ The node runs on demand. Turning off or locking the screen keeps the current syn
 
 ### Features
 
+- Midnight interface with amber accents and Wallet / Activity / Settings navigation
+- Estimated EUR balance from FreiExchange MAC/BTC trades and Kraken BTC/EUR, with trade and quote timestamps
+- Automatic node start for existing wallets on opening and returning to the app
 - English wallet interface, dialogs and notifications
 - Receive addresses with QR codes
 - Local transaction signing and fee confirmation
@@ -31,6 +34,14 @@ Backups are encrypted wallet files, not recovery-word lists. Keep the backup and
 ### Validation
 
 Android emulator tests passed for block validation, test-transaction signing and confirmation, encryption, rejection of an incorrect password, and backup restoration. Mainnet peer connections and header download were also tested. The first build has been reported to launch on a Galaxy; full synchronization and real-device payment/recovery tests remain unverified. APK signature and ZIP alignment were checked. SHA256SUMS.txt is included.
+
+### Version 0.2.0 — Midnight, EUR valuation and automatic start
+
+The wallet now uses the Midnight design. Public market quotes refresh every five minutes while the app is open. Older trades and cached data are labelled; an estimated EUR value is not a guaranteed sale price. Wallet balances and addresses are never included in quote requests.
+
+Existing wallets automatically start the local node when the app opens or resumes. A deliberate stop from Settings or the notification remains paused until **Settings → Start / resume node**. New wallets still require setup and password encryption. Screen-lock synchronization is preserved.
+
+Five emulator tests passed for the wallet lifecycle, market arithmetic/error handling, automatic start/resume and deliberate pause, plus mainnet connectivity. A separate live market/cache check passed, and the UI was visually reviewed. The APK uses the same signing certificate and package ID as previous releases. **Install as an update; do not uninstall or clear app data.**
 
 ### Version 0.1.2 — Screen-off synchronization fix
 
